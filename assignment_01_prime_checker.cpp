@@ -28,7 +28,35 @@
 // - You MUST implement the logic inside a function (see scaffold below).
 // - Numbers less than 2 are NOT prime — handle this inside the function.
 // - The main() function must call isPrime() and print the result.
-//
+//#include <iostream>
+
+using namespace std;
+
+int main() {
+    int num;
+    bool isPrime = true;
+
+    cout << "Enter a positive integer: ";
+    cin >> num;
+
+    if (num <= 1) {
+        isPrime = false;
+    } else {
+        for (int i = 2; i <= num / 2; ++i) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+
+    if (isPrime)
+        cout << num << " is a prime number." << endl;
+    else
+        cout << num << " is not a prime number." << endl;
+
+    return 0;
+}
 
 // =============================================================================
 // YOUR CODE BELOW — remove the // symbols from the scaffold and fill it in
