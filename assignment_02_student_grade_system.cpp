@@ -37,7 +37,32 @@
 // - Validate the score inside getGrade(). If it is out of range, return '\0'
 //   (null character) and let main() print the error message.
 // - Use if / else if / else to determine the grade.
-//
+//#include <iostream>
+
+using namespace std;
+
+int main() {
+    double score;
+
+    cout << "Enter the student's score (0-100): ";
+    cin >> score;
+
+    if (score < 0 || score > 100) {
+        cout << "Invalid score! Please enter a value between 0 and 100." << endl;
+    } else if (score >= 80) {
+        cout << "Grade: A" << endl;
+    } else if (score >= 70) {
+        cout << "Grade: B" << endl;
+    } else if (score >= 60) {
+        cout << "Grade: C" << endl;
+    } else if (score >= 50) {
+        cout << "Grade: D" << endl;
+    } else {
+        cout << "Grade: F" << endl;
+    }
+
+    return 0;
+}
 
 // =============================================================================
 // YOUR CODE BELOW — remove the // symbols from the scaffold and fill it in
