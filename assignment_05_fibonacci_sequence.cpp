@@ -46,6 +46,86 @@
 //
 // =============================================================================
 // YOUR CODE BELOW — remove the // symbols from the scaffold and fill it in
+#include <iostream>
+
+using namespace std;
+
+// PART A: Print the First N Fibonacci Terms
+void printFibonacciSequence() {
+    int n;
+    cout << "How many terms? ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Error: N must be a positive integer." << endl;
+        return;
+    }
+
+    cout << "Fibonacci sequence:";
+    
+    long long t1 = 0, t2 = 1, nextTerm;
+
+    for (int i = 1; i <= n; i++) {
+        if (i == 1) {
+            cout << " " << t1;
+            continue;
+        }
+        if (i == 2) {
+            cout << " " << t2;
+            continue;
+        }
+        
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+        
+        cout << " " << nextTerm;
+    }
+    cout << endl;
+}
+
+// PART B: Check if a Number Belongs to the Sequence
+void checkFibonacciNumber() {
+    long long num;
+    cout << "Enter a number to check: ";
+    cin >> num;
+
+    if (num < 0) {
+        cout << num << " is NOT a Fibonacci number." << endl;
+        return;
+    }
+
+    long long t1 = 0, t2 = 1, nextTerm = 0;
+    bool isFib = false;
+
+    if (num == 0 || num == 1) {
+        isFib = true;
+    } else {
+        while (nextTerm < num) {
+            nextTerm = t1 + t2;
+            t1 = t2;
+            t2 = nextTerm;
+            if (nextTerm == num) {
+                isFib = true;
+                break;
+            }
+        }
+    }
+
+    if (isFib) {
+        cout << num << " is a Fibonacci number." << endl;
+    } else {
+        cout << num << " is NOT a Fibonacci number." << endl;
+    }
+}
+
+int main() {
+    printFibonacciSequence();
+    cout << endl;
+    checkFibonacciNumber();
+
+    return 0;
+}
 // =============================================================================
 
 #include <iostream>
