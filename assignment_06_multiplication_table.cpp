@@ -51,6 +51,58 @@
 
 //
 // =============================================================================
+#include <iostream>
+
+using namespace std;
+
+// Helper function to print a single multiplication table for a given number
+void printSingleTable(int num) {
+    cout << "Multiplication Table for " << num << ":" << endl;
+    for (int i = 1; i <= 12; i++) {
+        cout << num << " x " << i << " = " << (num * i) << endl;
+    }
+}
+
+// PART A: Single Table
+void partASingleTable() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Error: N must be a positive integer." << endl;
+        return;
+    }
+
+    printSingleTable(n);
+}
+
+// PART B: Bonus - Tables from 1 to N
+void partBTablesUpToN() {
+    int n;
+    cout << "Enter a number N: ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Error: N must be a positive integer." << endl;
+        return;
+    }
+
+    for (int i = 1; i <= n; i++) {
+        printSingleTable(i);
+        if (i < n) {
+            cout << "----------------------------------------" << endl;
+        }
+    }
+}
+
+int main() {
+    partASingleTable();
+    cout << "\n----------------------------------------\n" << endl;
+    partBTablesUpToN();
+
+    return 0;
+}
 // YOUR CODE BELOW — remove the // symbols from the scaffold and fill it in
 // =============================================================================
 
