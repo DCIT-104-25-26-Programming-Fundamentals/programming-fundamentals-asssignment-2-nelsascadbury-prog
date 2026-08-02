@@ -34,7 +34,73 @@
 //   print an error message and stop.
 //
 
-//
+//#include <iostream>
+
+using namespace std;
+
+// Function to calculate the sum of array elements
+double calculateSum(double arr[], int n) {
+    double sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+// Function to calculate the average
+double calculateAverage(double arr[], int n) {
+    if (n == 0) return 0;
+    return calculateSum(arr, n) / n;
+}
+
+// Function to find the maximum value
+double calculateMax(double arr[], int n) {
+    double maxVal = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > maxVal) {
+            maxVal = arr[i];
+        }
+    }
+    return maxVal;
+}
+
+// Function to find the minimum value
+double calculateMin(double arr[], int n) {
+    double minVal = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] < minVal) {
+            minVal = arr[i];
+        }
+    }
+    return minVal;
+}
+
+int main() {
+    int n;
+    
+    cout << "How many numbers? ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Error: N must be a positive integer." << endl;
+        return 0;
+    }
+
+    double arr[n];
+
+    for (int i = 0; i < n; i++) {
+        cout << "Enter number " << (i + 1) << ": ";
+        cin >> arr[i];
+    }
+
+    cout << "\nResults:" << endl;
+    cout << "Sum: " << calculateSum(arr, n) << endl;
+    cout << "Average: " << calculateAverage(arr, n) << endl;
+    cout << "Maximum: " << calculateMax(arr, n) << endl;
+    cout << "Minimum: " << calculateMin(arr, n) << endl;
+
+    return 0;
+}
 // =============================================================================
 // YOUR CODE BELOW — remove the // symbols from the scaffold and fill it in
 // =============================================================================
